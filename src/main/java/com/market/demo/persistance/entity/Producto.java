@@ -3,11 +3,16 @@
  */
 package com.market.demo.persistance.entity;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -19,30 +24,33 @@ import javax.persistence.Table;
 public class Producto {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="id_producto")
+	@Column(name = "id_producto")
 	private Long id;
-	
-	@Column(name="nombre")
+
+	@Column(name = "nombre")
 	private String nombre;
-	
-	//private Categoria categoria;
-	@Column(name="id_categoria")
-	private Integer idCategoria;
-	
-	@Column(name="codigo_barras")
+
+	@ManyToOne
+	@JoinColumn(name = "id_categoria", updatable = false, insertable = false)
+	private Categoria categoria;
+//	@Column(name="id_categoria")
+//	private Integer idCategoria;
+
+	@Column(name = "codigo_barras")
 	private String codigoBarras;
-	
-	@Column(name="precio_venta")
+
+	@Column(name = "precio_venta")
 	private Double precioVenta;
-	
-	@Column(name="cantidad_stock")
+
+	@Column(name = "cantidad_stock")
 	private Integer cantidadStock;
-	
-	@Column(name="estado")
+
+	@Column(name = "estado")
 	private Boolean estado;
 	
+
 	public Producto() {
-		
+
 	}
 
 	public Long getId() {
@@ -61,13 +69,13 @@ public class Producto {
 		this.nombre = nombre;
 	}
 
-	public Integer getIdCategoria() {
-		return idCategoria;
-	}
-
-	public void setIdCategoria(Integer idCategoria) {
-		this.idCategoria = idCategoria;
-	}
+//	public Integer getIdCategoria() {
+//		return idCategoria;
+//	}
+//
+//	public void setIdCategoria(Integer idCategoria) {
+//		this.idCategoria = idCategoria;
+//	}
 
 	public String getCodigoBarras() {
 		return codigoBarras;
@@ -100,4 +108,21 @@ public class Producto {
 	public void setEstado(Boolean estado) {
 		this.estado = estado;
 	}
+
+	public Categoria getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}
+
+	public List<ComprasProducto> getCompras() {
+		return compras;
+	}
+
+	public void setCompras(List<ComprasProducto> compras) {
+		this.compras = compras;
+	}
+
 }

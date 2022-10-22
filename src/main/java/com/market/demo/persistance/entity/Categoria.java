@@ -1,10 +1,13 @@
 package com.market.demo.persistance.entity;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -21,6 +24,9 @@ public class Categoria {
 
 	@Column(name = "estado")
 	private String estado;
+	
+	@OneToMany(mappedBy = "categoria")	
+	List<Producto> productos;
 
 	public Long getId() {
 		return id;

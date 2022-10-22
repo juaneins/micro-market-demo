@@ -4,12 +4,16 @@
 package com.market.demo.persistance.entity;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -25,8 +29,8 @@ public class Compra {
 	@Column(name = "id_compra")
 	private Long id;
 
-	@Column(name = "id_cliente")
-	private String idCliente;
+//	@Column(name = "id_cliente")
+//	private String idCliente;
 
 	@Column(name = "fecha")
 	private LocalDateTime fecha;
@@ -40,6 +44,13 @@ public class Compra {
 	@Column(name = "estado")
 	private String estado;
 
+	@ManyToOne
+	@JoinColumn(name = "id_cliente", insertable = false, updatable = false)
+	private Cliente cliente;
+
+	@OneToMany(mappedBy = "compra")
+	private List<ComprasProducto> productos;
+
 	public Long getId() {
 		return id;
 	}
@@ -48,13 +59,13 @@ public class Compra {
 		this.id = id;
 	}
 
-	public String getIdCliente() {
-		return idCliente;
-	}
-
-	public void setIdCliente(String idCliente) {
-		this.idCliente = idCliente;
-	}
+//	public String getIdCliente() {
+//		return idCliente;
+//	}
+//
+//	public void setIdCliente(String idCliente) {
+//		this.idCliente = idCliente;
+//	}
 
 	public LocalDateTime getFecha() {
 		return fecha;
@@ -86,6 +97,22 @@ public class Compra {
 
 	public void setEstado(String estado) {
 		this.estado = estado;
+	}
+
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+
+	public List<ComprasProducto> getProductos() {
+		return productos;
+	}
+
+	public void setProductos(List<ComprasProducto> productos) {
+		this.productos = productos;
 	}
 
 }
