@@ -27,7 +27,7 @@ public class Compra {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_compra")
-	private Long id;
+	private Integer id;
 
 //	@Column(name = "id_cliente")
 //	private String idCliente;
@@ -51,11 +51,11 @@ public class Compra {
 	@OneToMany(mappedBy = "compra")
 	private List<ComprasProducto> productos;
 
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

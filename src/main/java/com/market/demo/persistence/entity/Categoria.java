@@ -17,7 +17,7 @@ public class Categoria {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_categoria")
-	private Long id;
+	private Integer id;
 
 	@Column(name = "descripcion")
 	private String descripcion;
@@ -28,11 +28,11 @@ public class Categoria {
 	@OneToMany(mappedBy = "categoria")	
 	List<Producto> productos;
 
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
