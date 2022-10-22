@@ -1,11 +1,11 @@
 /**
  * 
  */
-package com.market.demo.persistance.crud;
+package com.market.demo.persistence.crud;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.market.demo.persistance.entity.Producto;
+import com.market.demo.persistence.entity.Producto;
 
 /**
  * @author juaneins_uio

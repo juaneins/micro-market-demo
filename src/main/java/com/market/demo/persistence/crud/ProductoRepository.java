@@ -1,11 +1,11 @@
 /**
  * 
  */
-package com.market.demo.persistance.crud;
+package com.market.demo.persistence.crud;
 
 import java.util.List;
 
-import com.market.demo.persistance.entity.Producto;
+import com.market.demo.persistence.entity.Producto;
 
 /**
  * @author juaneins_uio

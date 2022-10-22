@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.market.demo.persistance.entity;
+package com.market.demo.persistence.entity;
 
 import java.util.List;
 

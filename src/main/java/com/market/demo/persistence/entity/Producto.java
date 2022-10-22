@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.market.demo.persistance.entity;
+package com.market.demo.persistence.entity;
 
 import java.util.List;
 
@@ -29,12 +29,9 @@ public class Producto {
 
 	@Column(name = "nombre")
 	private String nombre;
-
-	@ManyToOne
-	@JoinColumn(name = "id_categoria", updatable = false, insertable = false)
-	private Categoria categoria;
-//	@Column(name="id_categoria")
-//	private Integer idCategoria;
+	
+	@Column(name="id_categoria")
+	private Integer idCategoria;
 
 	@Column(name = "codigo_barras")
 	private String codigoBarras;
@@ -48,6 +45,9 @@ public class Producto {
 	@Column(name = "estado")
 	private Boolean estado;
 	
+	@ManyToOne
+	@JoinColumn(name = "id_categoria", updatable = false, insertable = false)
+	private Categoria categoria;
 
 	public Producto() {
 
@@ -69,13 +69,13 @@ public class Producto {
 		this.nombre = nombre;
 	}
 
-//	public Integer getIdCategoria() {
-//		return idCategoria;
-//	}
-//
-//	public void setIdCategoria(Integer idCategoria) {
-//		this.idCategoria = idCategoria;
-//	}
+	public Integer getIdCategoria() {
+		return idCategoria;
+	}
+
+	public void setIdCategoria(Integer idCategoria) {
+		this.idCategoria = idCategoria;
+	}
 
 	public String getCodigoBarras() {
 		return codigoBarras;
@@ -115,14 +115,6 @@ public class Producto {
 
 	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
-	}
-
-	public List<ComprasProducto> getCompras() {
-		return compras;
-	}
-
-	public void setCompras(List<ComprasProducto> compras) {
-		this.compras = compras;
 	}
 
 }
