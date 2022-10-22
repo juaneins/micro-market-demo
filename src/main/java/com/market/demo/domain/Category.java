@@ -8,15 +8,15 @@ package com.market.demo.domain;
  *
  */
 public class Category {
-	private long categoryId;
+	private int categoryId;
 	private String category;
 	private boolean active;
 
-	public long getCategoryId() {
+	public int getCategoryId() {
 		return categoryId;
 	}
 
-	public void setCategoryId(long categoryId) {
+	public void setCategoryId(int categoryId) {
 		this.categoryId = categoryId;
 	}
 
