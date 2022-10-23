@@ -15,7 +15,7 @@ import com.market.demo.persistence.entity.Producto;
  * @author juaneins_uio
  *
  */
-public interface ProductoCrudRepository extends CrudRepository<Producto, Long> {
+public interface ProductoCrudRepository extends CrudRepository<Producto, Integer> {
 
 	List<Producto> findByIdCategoriaOrderByNombreAsc(int idCategoria);
 
