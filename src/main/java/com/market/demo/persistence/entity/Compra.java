@@ -29,8 +29,8 @@ public class Compra {
 	@Column(name = "id_compra")
 	private Integer id;
 
-//	@Column(name = "id_cliente")
-//	private String idCliente;
+	@Column(name = "id_cliente")
+	private String idCliente;
 
 	@Column(name = "fecha")
 	private LocalDateTime fecha;
@@ -59,13 +59,13 @@ public class Compra {
 		this.id = id;
 	}
 
-//	public String getIdCliente() {
-//		return idCliente;
-//	}
-//
-//	public void setIdCliente(String idCliente) {
-//		this.idCliente = idCliente;
-//	}
+	public String getIdCliente() {
+		return idCliente;
+	}
+
+	public void setIdCliente(String idCliente) {
+		this.idCliente = idCliente;
+	}
 
 	public LocalDateTime getFecha() {
 		return fecha;
