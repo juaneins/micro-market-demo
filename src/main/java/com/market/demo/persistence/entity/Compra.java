@@ -6,6 +6,7 @@ package com.market.demo.persistence.entity;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -27,7 +28,7 @@ public class Compra {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_compra")
-	private Integer id;
+	private Integer idCompra;
 
 	@Column(name = "id_cliente")
 	private String idCliente;
@@ -48,15 +49,15 @@ public class Compra {
 	@JoinColumn(name = "id_cliente", insertable = false, updatable = false)
 	private Cliente cliente;
 
-	@OneToMany(mappedBy = "compra")
+	@OneToMany(mappedBy = "compra", cascade = CascadeType.ALL)
 	private List<ComprasProducto> productos;
 
-	public Integer getId() {
-		return id;
+	public Integer getIdCompra() {
+		return idCompra;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+	public void setIdCompra(Integer idCompra) {
+		this.idCompra = idCompra;
 	}
 
 	public String getIdCliente() {

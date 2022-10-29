@@ -21,7 +21,7 @@ import com.market.demo.persistence.entity.Compra;
 public interface PurchaseMapper {
 
 	@Mappings({
-		@Mapping(source = "id", target ="purchaseId"),
+		@Mapping(source = "idCompra", target ="purchaseId"),
 		@Mapping(source = "idCliente", target ="clientId"),
 		@Mapping(source = "fecha", target ="date"),
 		@Mapping(source = "medioPago", target ="paymentMethod"),		

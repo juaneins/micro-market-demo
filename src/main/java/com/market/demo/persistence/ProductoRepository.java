@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.market.demo.persistence.crud;
+package com.market.demo.persistence;
 
 import java.util.List;
 import java.util.Optional;
@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import com.market.demo.domain.Product;
 import com.market.demo.domain.repository.ProductRepository;
+import com.market.demo.persistence.crud.ProductoCrudRepository;
 import com.market.demo.persistence.entity.Producto;
 import com.market.demo.persistence.mapper.ProductMapper;
 
